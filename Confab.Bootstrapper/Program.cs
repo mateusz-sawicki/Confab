@@ -1,3 +1,6 @@
+using Confab.Modules.Conferences.Api;
+using Confab.Shared.Infrastructure;
+
 namespace Confab.Bootstrapper
 {
     public class Program
@@ -8,17 +11,13 @@ namespace Confab.Bootstrapper
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddInfrastucture();
+            builder.Services.AddConferences();
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-
-            app.UseAuthorization();
-
-
-            app.MapControllers();
-            app.MapGet("/", context => context.Response.WriteAsync("Confab API!"));
+            app.UseInfrastructure();
 
             app.Run();
         }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Bootstrapper", "Confab.Bootstrapper\Confab.Bootstrapper.csproj", "{6E7D034B-0F40-4EAE-A6D7-3AF95151814E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Bootstrapper", "Confab.Bootstrapper\Confab.Bootstrapper.csproj", "{6E7D034B-0F40-4EAE-A6D7-3AF95151814E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E727C654-5645-4898-B1B5-1FE08C08C432}"
 EndProject
@@ -15,9 +15,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{A36AFD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D90D236D-BF74-4CD6-B32A-40EA7F132E1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Shared.Abstractions", "Confab.Shared.Abstractions\Confab.Shared.Abstractions.csproj", "{1F927560-B47E-4062-A009-512F1EE1F907}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Shared.Abstractions", "Confab.Shared.Abstractions\Confab.Shared.Abstractions.csproj", "{1F927560-B47E-4062-A009-512F1EE1F907}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Shared.Infrastructure", "Confab.Shared.Infrastructure\Confab.Shared.Infrastructure.csproj", "{EA917D64-62AD-40D9-9DB9-EFE4725F996A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Shared.Infrastructure", "Confab.Shared.Infrastructure\Confab.Shared.Infrastructure.csproj", "{EA917D64-62AD-40D9-9DB9-EFE4725F996A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Conferences", "Conferences", "{8B25C89A-1457-48BA-8222-BBD4B6F5E586}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Conferences.Api", "Confab.Modules.Conferences.Api\Confab.Modules.Conferences.Api.csproj", "{A1FD6EA2-A9D3-4C5E-94C0-5B237ABE7C18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Conferences.Core", "Confab.Modules.Conferences.Core\Confab.Modules.Conferences.Core.csproj", "{5DC583FB-AAD1-421E-BB33-4A02E506FE7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +43,14 @@ Global
 		{EA917D64-62AD-40D9-9DB9-EFE4725F996A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA917D64-62AD-40D9-9DB9-EFE4725F996A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA917D64-62AD-40D9-9DB9-EFE4725F996A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1FD6EA2-A9D3-4C5E-94C0-5B237ABE7C18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1FD6EA2-A9D3-4C5E-94C0-5B237ABE7C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1FD6EA2-A9D3-4C5E-94C0-5B237ABE7C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1FD6EA2-A9D3-4C5E-94C0-5B237ABE7C18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DC583FB-AAD1-421E-BB33-4A02E506FE7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DC583FB-AAD1-421E-BB33-4A02E506FE7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DC583FB-AAD1-421E-BB33-4A02E506FE7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DC583FB-AAD1-421E-BB33-4A02E506FE7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +62,9 @@ Global
 		{A36AFD6C-7798-4A22-8851-4BFBA1EE9F29} = {E727C654-5645-4898-B1B5-1FE08C08C432}
 		{1F927560-B47E-4062-A009-512F1EE1F907} = {A36AFD6C-7798-4A22-8851-4BFBA1EE9F29}
 		{EA917D64-62AD-40D9-9DB9-EFE4725F996A} = {A36AFD6C-7798-4A22-8851-4BFBA1EE9F29}
+		{8B25C89A-1457-48BA-8222-BBD4B6F5E586} = {FEC6DA7E-91AF-4041-82BD-E948579A1015}
+		{A1FD6EA2-A9D3-4C5E-94C0-5B237ABE7C18} = {8B25C89A-1457-48BA-8222-BBD4B6F5E586}
+		{5DC583FB-AAD1-421E-BB33-4A02E506FE7B} = {8B25C89A-1457-48BA-8222-BBD4B6F5E586}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B31E43A7-6BF6-43EF-AD72-347D9FB915F3}

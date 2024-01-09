@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Bootstrapper", "Confab.Bootstrapper\Confab.Bootstrapper.csproj", "{6E7D034B-0F40-4EAE-A6D7-3AF95151814E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E727C654-5645-4898-B1B5-1FE08C08C432}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrapper", "Bootstrapper", "{76758316-589E-4C2E-819A-18CBCA4A5F82}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{FEC6DA7E-91AF-4041-82BD-E948579A1015}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{A36AFD6C-7798-4A22-8851-4BFBA1EE9F29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D90D236D-BF74-4CD6-B32A-40EA7F132E1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Shared.Abstractions", "Confab.Shared.Abstractions\Confab.Shared.Abstractions.csproj", "{1F927560-B47E-4062-A009-512F1EE1F907}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Shared.Infrastructure", "Confab.Shared.Infrastructure\Confab.Shared.Infrastructure.csproj", "{EA917D64-62AD-40D9-9DB9-EFE4725F996A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E7D034B-0F40-4EAE-A6D7-3AF95151814E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E7D034B-0F40-4EAE-A6D7-3AF95151814E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E7D034B-0F40-4EAE-A6D7-3AF95151814E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E7D034B-0F40-4EAE-A6D7-3AF95151814E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F927560-B47E-4062-A009-512F1EE1F907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F927560-B47E-4062-A009-512F1EE1F907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F927560-B47E-4062-A009-512F1EE1F907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F927560-B47E-4062-A009-512F1EE1F907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA917D64-62AD-40D9-9DB9-EFE4725F996A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA917D64-62AD-40D9-9DB9-EFE4725F996A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA917D64-62AD-40D9-9DB9-EFE4725F996A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA917D64-62AD-40D9-9DB9-EFE4725F996A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6E7D034B-0F40-4EAE-A6D7-3AF95151814E} = {76758316-589E-4C2E-819A-18CBCA4A5F82}
+		{76758316-589E-4C2E-819A-18CBCA4A5F82} = {E727C654-5645-4898-B1B5-1FE08C08C432}
+		{FEC6DA7E-91AF-4041-82BD-E948579A1015} = {E727C654-5645-4898-B1B5-1FE08C08C432}
+		{A36AFD6C-7798-4A22-8851-4BFBA1EE9F29} = {E727C654-5645-4898-B1B5-1FE08C08C432}
+		{1F927560-B47E-4062-A009-512F1EE1F907} = {A36AFD6C-7798-4A22-8851-4BFBA1EE9F29}
+		{EA917D64-62AD-40D9-9DB9-EFE4725F996A} = {A36AFD6C-7798-4A22-8851-4BFBA1EE9F29}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B31E43A7-6BF6-43EF-AD72-347D9FB915F3}
+	EndGlobalSection
+EndGlobal

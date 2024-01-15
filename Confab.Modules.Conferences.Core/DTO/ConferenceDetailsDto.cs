@@ -6,6 +6,6 @@ namespace Confab.Modules.Conferences.Core.DTO
     {
         [Required]
         [StringLength(1000, MinimumLength = 3)]
-        public string Descrpition { get; set; }
+        public string Description { get; set; }
     }
 }

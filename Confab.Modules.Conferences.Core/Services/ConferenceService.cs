@@ -27,7 +27,7 @@ namespace Confab.Modules.Conferences.Core.Services
                 throw new ConferenceNotFoundException(id);
             }
 
-            if (await _conferenceDeletionPolicy.CanDeleteAsync(conference))
+            if (await _conferenceDeletionPolicy.CanDeleteAsync(conference) is false)
             {
                 throw new CannotDeleteConferenceException(id);
             }
@@ -48,12 +48,12 @@ namespace Confab.Modules.Conferences.Core.Services
                 Id = dto.Id,
                 HostId = dto.HostId,
                 Name = dto.Name,
-                Description = dto.Descrpition,
+                Description = dto.Description,
                 From = dto.From,
                 To = dto.To,
                 Location = dto.Location,
                 LogoUrl = dto.LogoUrl,
-                ParticipantsLimit = dto.ParticipantsLimit,
+                ParticipantsLimit = dto.ParticipantsLimit
             });
         }
 
@@ -73,7 +73,7 @@ namespace Confab.Modules.Conferences.Core.Services
             }
 
             var dto = Map<ConferenceDetailsDto>(conference);
-            dto.Descrpition = conference.Description;
+            dto.Description = conference.Description;
 
             return dto;
         }
@@ -87,7 +87,7 @@ namespace Confab.Modules.Conferences.Core.Services
             }
 
             conference.Name = dto.Name;
-            conference.Description = dto.Descrpition;
+            conference.Description = dto.Description;
             conference.Location = dto.Location;
             conference.LogoUrl = dto.LogoUrl;
             conference.From = dto.From;
@@ -104,7 +104,7 @@ namespace Confab.Modules.Conferences.Core.Services
             From = conference.From,
             To = conference.To,
             HostId = conference.HostId,
-            HostName = conference.Host.Name,
+            HostName = conference.Host?.Name,
             Location = conference.Location,
             LogoUrl = conference.LogoUrl,
             ParticipantsLimit = conference.ParticipantsLimit

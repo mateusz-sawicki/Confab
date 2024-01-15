@@ -19,12 +19,16 @@ namespace Confab.Modules.Conferences.Core.Repositories
             return _conferences;
         }
 
-        public Task DeleteAsync(Conference conference) => Task.CompletedTask;
-
-        public Task<Conference> GetAsync(Guid id) => Task.FromResult(_conferences.SingleOrDefault(x => x.Id == id)) ;
-        public Task UpdateAsync(Conference conference)
+        public Task DeleteAsync(Conference conference)
         {
             _conferences.Remove(conference);
+            return Task.CompletedTask;
+        }
+
+        public Task<Conference> GetAsync(Guid id) => Task.FromResult(_conferences.SingleOrDefault(x => x.Id == id));
+
+        public Task UpdateAsync(Conference conference)
+        {
             return Task.CompletedTask;
         }
     }

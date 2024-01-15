@@ -13,9 +13,4 @@ namespace Confab.Modules.Conferences.Core.DTO
         [StringLength(1000, MinimumLength = 3)]
         public string Description { get; set; }
     }
-
-    public class HostDetailsDto : HostDto
-    {
-        public List<ConferenceDto> Conferences { get; set; }
-    }
 }

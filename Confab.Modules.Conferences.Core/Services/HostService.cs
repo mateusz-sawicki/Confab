@@ -61,18 +61,27 @@ namespace Confab.Modules.Conferences.Core.Services
             }
 
             var dto = Map<HostDetailsDto>(host);
-            dto.Conferences = host.Conferences.Select(x => new ConferenceDto
+            try
             {
-                Id = x.Id,
-                Name = x.Name,
-                HostId = x.HostId,
-                HostName = x.Host.Name,
-                From = x.From,
-                To = x.To,
-                LogoUrl = x.LogoUrl,
-                Location = x.Location,
-                ParticipantsLimit = x.ParticipantsLimit
-            }).ToList();
+                dto.Conferences = host.Conferences?.Select(x => new ConferenceDto
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    HostId = x.HostId,
+                    HostName = x.Host.Name,
+                    From = x.From,
+                    To = x.To,
+                    LogoUrl = x.LogoUrl,
+                    Location = x.Location,
+                    ParticipantsLimit = x.ParticipantsLimit
+                }).ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
 
             return dto;
         }
@@ -85,8 +94,8 @@ namespace Confab.Modules.Conferences.Core.Services
                 throw new HostNotFoundException(dto.Id);
             }
 
-            dto.Name = host.Name;
-            dto.Description = host.Description;
+            host.Name = dto.Name;
+            host.Description = dto.Description;
             await _hostRepository.UpdateAsync(host);
         }
 
@@ -94,7 +103,7 @@ namespace Confab.Modules.Conferences.Core.Services
         {
             Id = host.Id,
             Name = host.Name,
-            Description = host.Description
+            Description = host.Description,
         };
     }
 }

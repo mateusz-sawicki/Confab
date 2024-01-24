@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Confab.Shared.Infrastructure\Confab.Shared.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\Shared\Confab.Shared.Infrastructure\Confab.Shared.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

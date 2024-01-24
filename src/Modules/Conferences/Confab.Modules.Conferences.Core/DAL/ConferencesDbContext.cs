@@ -10,7 +10,7 @@ namespace Confab.Modules.Conferences.Core.DAL
 
         public ConferencesDbContext(DbContextOptions<ConferencesDbContext> options) : base(options)
         {
-
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

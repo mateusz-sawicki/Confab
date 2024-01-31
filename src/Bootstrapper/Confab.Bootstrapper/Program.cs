@@ -1,5 +1,6 @@
 using Confab.Modules.Conferences.Api;
 using Confab.Shared.Infrastructure;
+using Confab.Shared.Infrastructure.Modules;
 
 namespace Confab.Bootstrapper
 {
@@ -8,11 +9,14 @@ namespace Confab.Bootstrapper
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            var assemblies = ModuleLoader.LoadAssemblies();
-            var modules = ModuleLoader.LoadModules(assemblies);
-            // Add services to the container.
+            builder.Host.ConfigureModules();
 
-            builder.Services.AddInfrastucture();
+            var assemblies = ModuleLoader.LoadAssemblies(builder.Configuration);
+            var modules = ModuleLoader.LoadModules(assemblies);
+
+            // Add services to the container.
+            builder.Services.AddInfrastucture(assemblies, modules);
+
             foreach (var module in modules)
             {
                 module.Register(builder.Services);

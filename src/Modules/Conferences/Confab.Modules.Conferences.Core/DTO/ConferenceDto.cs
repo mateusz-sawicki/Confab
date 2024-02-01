@@ -1,5 +1,4 @@
-﻿using Confab.Modules.Conferences.Core.Entities;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Confab.Modules.Conferences.Core.DTO
 {

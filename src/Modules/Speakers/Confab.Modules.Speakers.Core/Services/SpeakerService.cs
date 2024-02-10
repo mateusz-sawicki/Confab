@@ -1,8 +1,7 @@
 ﻿using Confab.Modules.Speakers.Core.DTO;
-using Confab.Modules.Speakers.Core.Entities;
 using Confab.Modules.Speakers.Core.Exceptions;
+using Confab.Modules.Speakers.Core.Mappings;
 using Confab.Modules.Speakers.Core.Repositories;
-using Humanizer;
 
 namespace Confab.Modules.Speakers.Core.Services
 {
@@ -14,59 +13,40 @@ namespace Confab.Modules.Speakers.Core.Services
         {
             _speakerRepository = speakerRepository;
         }
-        public async Task AddAsync(SpeakerDto dto)
+        public async Task AddAsync(SpeakerDto speaker)
         {
-            dto.Id = Guid.NewGuid();
-            await _speakerRepository.AddAsync(new Speaker
+            var exists = await _speakerRepository.ExistsAsync(speaker.Id);
+            if (exists)
             {
-                Id = dto.Id,
-                FullName = dto.FullName,
-                AvatarUrl = dto.AvatarUrl,
-                Bio = dto.Bio,
-                Email = dto.Email
-            });
+                throw new SpeakerNotFoundException(speaker.Id);
+            }
+
+            await _speakerRepository.AddAsync(speaker.AsEntity());
         }
 
-        public async Task<IReadOnlyList<SpeakerDto>> BrowseAsync()
+        public async Task<IEnumerable<SpeakerDto>> BrowseAsync()
         {
-            var speakers = await _speakerRepository.GetAllAsync();
+            var entities = await _speakerRepository.BrowseAsync();
 
-            return speakers.Select(Map<SpeakerDto>).ToList();
+            return entities?.Select(e => e.AsDto());
         }
 
         public async Task<SpeakerDto> GetAsync(Guid id)
         {
-            var speaker = await _speakerRepository.GetAsync(id);
-            if (speaker == null)
-            {
-                throw new SpeakerNotFoundException(id);
-            }
-            return Map<SpeakerDto>(speaker);
+            var entity = await _speakerRepository.GetAsync(id);
+            return entity?.AsDto();
         }
 
-        public async Task UpdateAsync(SpeakerDto dto)
+        public async Task UpdateAsync(SpeakerDto speaker)
         {
-            var speaker = await _speakerRepository.GetAsync(dto.Id);
-            if (speaker == null)
+            var exists = await _speakerRepository.ExistsAsync(speaker.Id);
+            if (!exists)
             {
-                throw new SpeakerNotFoundException(dto.Id);
+                throw new SpeakerNotFoundException(speaker.Id);
             }
-            speaker.FullName = dto.FullName;
-            speaker.AvatarUrl = dto.AvatarUrl;
-            speaker.Bio = dto.Bio;
-            speaker.Email = dto.Email;
 
-            await _speakerRepository.UpdateAsync(speaker);
+            await _speakerRepository.UpdateAsync(speaker.AsEntity());
 
         }
-
-        private static T Map<T>(Speaker speaker) where T : SpeakerDto, new() => new()
-        {
-            Id = speaker.Id,
-            FullName = speaker.FullName,
-            AvatarUrl = speaker.AvatarUrl,
-            Bio = speaker.Bio,
-            Email = speaker.Email
-        };
     }
 }

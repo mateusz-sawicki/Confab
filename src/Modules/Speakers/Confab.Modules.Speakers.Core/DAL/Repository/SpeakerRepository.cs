@@ -20,7 +20,9 @@ namespace Confab.Modules.Speakers.Core.DAL.Repository
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Speaker>> GetAllAsync() => await _speakers.ToListAsync();
+        public async Task<IEnumerable<Speaker>> BrowseAsync() => await _speakers.ToListAsync();
+
+        public async Task<bool> ExistsAsync(Guid id) => await _speakers.AnyAsync(x => x.Id == id);
 
         public Task<Speaker> GetAsync(Guid id) => _speakers.SingleOrDefaultAsync(x => x.Id == id);
 

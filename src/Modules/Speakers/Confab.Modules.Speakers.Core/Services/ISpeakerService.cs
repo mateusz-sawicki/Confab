@@ -6,7 +6,7 @@ namespace Confab.Modules.Speakers.Core.Services
     {
         Task AddAsync(SpeakerDto dto);
         Task<SpeakerDto> GetAsync(Guid id);
-        Task<IReadOnlyList<SpeakerDto>> BrowseAsync();
+        Task<IEnumerable<SpeakerDto>> BrowseAsync();
         Task UpdateAsync(SpeakerDto dto);
     }
 }

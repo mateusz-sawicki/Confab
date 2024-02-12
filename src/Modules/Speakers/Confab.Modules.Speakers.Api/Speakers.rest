@@ -1,5 +1,6 @@
 @url = http://localhost:5000/speakers-module/speakers
-@speakerId = ac9f20aa-6154-4023-b413-ac7d38ae0e6e
+@speakerId = af8dae9c-fe9c-4899-bd2d-7bc39cd87f10
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmNTA4Y2NkNS04YmQxLTRjMTgtOWVkMS05YzAzZDM5ZmQxOWUiLCJ1bmlxdWVfbmFtZSI6ImY1MDhjY2Q1LThiZDEtNGMxOC05ZWQxLTljMDNkMzlmZDE5ZSIsImp0aSI6IjAxNzJmYWUzLTQzNWEtNGNhMi1iNzM5LWQ1ODM0NWI2MGFmZSIsImlhdCI6IjE3MDc3NzM5NzU1MDkiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJ1c2VyIiwicGVybWlzc2lvbnMiOlsiY29uZmVyZW5jZXMiLCJob3N0cyIsInNwZWFrZXJzIiwidXNlcnMiXSwibmJmIjoxNzA3NzczOTc1LCJleHAiOjE3MDc3Nzc1NzUsImlzcyI6ImNvbmZhYiJ9.V879nDOcRk8t4t2MUAd_cTfRxacd3WPO0OkOhvYyB8Q
 
 
 //speakers
@@ -9,6 +10,8 @@ GET {{url}}
 ###
 POST {{url}}
 Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
 
 {
     "fullName": "Lorem ipsum1",
@@ -23,7 +26,7 @@ PUT {{url}}/{{speakerId}}
 Content-Type: application/json
 
 {
-    "fullName": "Lorem ipsum2",
+    "fullName": "Lorem 312ipsum3",
     "email": "test@test.pl",
     "bio": "xd"
 }

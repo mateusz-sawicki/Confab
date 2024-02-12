@@ -12,6 +12,8 @@ namespace Confab.Modules.Conferences.Api
 
         public string Path => BasePath;
 
+        public IEnumerable<string> Policies { get; } = new[] { "conferences", "hosts" };
+
         public void Register(IServiceCollection services)
         {
             services.AddCore();

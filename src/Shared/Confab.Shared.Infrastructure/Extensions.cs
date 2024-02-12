@@ -1,6 +1,7 @@
 ﻿using Confab.Shared.Abstractions;
 using Confab.Shared.Abstractions.Modules;
 using Confab.Shared.Infrastructure.Api;
+using Confab.Shared.Infrastructure.Auth;
 using Confab.Shared.Infrastructure.Exceptions;
 using Confab.Shared.Infrastructure.Services;
 using Confab.Shared.Infrastructure.Time;
@@ -29,7 +30,7 @@ namespace Confab.Shared.Infrastructure
                     if (!bool.Parse(value)) disabledModules.Add(key.Split(":")[0]);
                 }
             }
-
+            services.AddAuth(modules);
             services.AddErrorHandling();
             services.AddSingleton<IClock, UtcClock>();
             services.AddHostedService<AppInitializer>();
@@ -55,7 +56,9 @@ namespace Confab.Shared.Infrastructure
         public static IApplicationBuilder UseInfrastructure(this IApplicationBuilder app)
         {
             app.UseErrorHandling();
+            app.UseAuthentication();
             app.UseRouting();
+            app.UseAuthorization();
 
             return app;
         }

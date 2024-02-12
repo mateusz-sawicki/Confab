@@ -9,5 +9,6 @@ namespace Confab.Shared.Abstractions.Modules
         string Path { get; }
         void Register(IServiceCollection services);
         void Use(IApplicationBuilder app);
+        IEnumerable<string> Policies => null;
     }
 }

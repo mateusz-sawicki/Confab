@@ -1,0 +1,37 @@
+@url = http://localhost:5000/users-module
+@userId = af8dae9c-fe9c-4899-bd2d-7bc39cd87f10
+
+
+//speakers
+###
+GET {{url}}
+
+###
+POST {{url}}/account/sign-up
+Content-Type: application/json
+
+{
+    "email": "test@test.pl",
+    "password": "test1",
+    "role": "user",
+    "claims": {
+        "permissions": ["conferences", "hosts", "speakers", "users"]
+    }
+
+}
+
+###
+GET {{url}}/{{userId}}
+
+###
+PUT {{url}}/{{userId}}
+Content-Type: application/json
+
+{
+    "fullName": "Lorem 312ipsum3",
+    "email": "test@test.pl",
+    "bio": "xd"
+}
+
+###
+DELETE {{url}}/{{userId}}

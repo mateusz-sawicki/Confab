@@ -34,6 +34,7 @@ namespace Confab.Bootstrapper
 
             app.MapControllers();
             app.MapGet("/", context => context.Response.WriteAsync("Confab API!"));
+            app.MapModuleInfo();
 
             app.Run();
         }

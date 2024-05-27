@@ -1,9 +1,9 @@
 ﻿using Confab.Shared.Abstractions.Auth;
-using Confab.Shared.Abstractions;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Confab.Shared.Abstractions.Time;
 
 namespace Confab.Shared.Infrastructure.Auth
 {

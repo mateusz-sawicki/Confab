@@ -1,4 +1,3 @@
-using Confab.Modules.Conferences.Api;
 using Confab.Shared.Infrastructure;
 using Confab.Shared.Infrastructure.Modules;
 

@@ -1,0 +1,8 @@
+{
+  "tickets": {
+    "module": {
+      "name": "tickets",
+      "enabled": true
+    }
+  }
+}
